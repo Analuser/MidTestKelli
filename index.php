@@ -13,8 +13,13 @@
 
 	$query = mysqli_query($con, "SELECT * FROM users");
 
+	$userDatabaseTotal = 0;
+
 	while ($row = mysqli_fetch_array($query)) {
-		echo "ID: " . $row['ID'] . " Nama: " . $row['Nama'] . " Alamat: " . $row['Alamat'] . " Jabatan: " . $row['Jabatan'] . "\n";
+		$userDatabaseTotal+=1;
 	}
+
+
+	echo $userDatabaseTotal;
 
 ?>
