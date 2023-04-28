@@ -1,21 +1,21 @@
 <?php
-	$host = '172.18.0.2';
-	$user = 'root';
-	$pass = 'root';
-	$db = 'Redlock';
+	$Shost = '172.18.0.2';
+	$Suser = 'root';
+	$Spass = 'root';
+	$Sdatabase = 'Redlock';
 
 
-	$con = mysqli_connect($host, $user, $pass, $db);
-	if(!$con){
+	$connection = mysqli_connect($host, $user, $pass, $db);
+	if(!$connection){
 		echo "connection fail";
 		die();
 	}
 
-	$query = mysqli_query($con, "SELECT * FROM users");
+	$queries = mysqli_query($connection, "SELECT * FROM users");
 
 	$userDatabaseTotal = 0;
 
-	while ($row = mysqli_fetch_array($query)) {
+	while ($eof = mysqli_fetch_array($queries)) {
 		$userDatabaseTotal+=1;
 	}
 
